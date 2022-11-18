@@ -1,0 +1,7 @@
+flask==2.0.1
+arrow
+requests
+uWSGI
+flask-cors==3.0.10
+pytest==6.2.5
+Faker

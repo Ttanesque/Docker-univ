@@ -1,0 +1,33 @@
+version: "3.7"
+
+services:
+# first container
+    backend:
+        # look for dockerfile and build the container
+        build: ./backend
+        container_name:  backend
+        restart: always
+        # set enviornemt variables
+        environment:
+            - APP_NAME=Flask
+        #  mount the volumes so we can change code and hot reload
+        volumes:
+            - './backend:/backend'
+
+    nginx:
+        build: ./nginx
+        container_name:  nginx
+        restart: always
+        # port allows the host machine to link to container
+        # pass 80 from host machine to 80 of the image filesystem
+        ports:
+            - "80:80"
+
+    frontend:
+        build: ./frontend
+        container_name:  frontend
+        command: /bin/sh -c "npm install && npm run serve"
+        restart: "no"
+        #  mount the volumes so we can change code and hot reload
+        volumes:
+            - './frontend:/frontend'
