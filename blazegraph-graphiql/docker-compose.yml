@@ -1,0 +1,23 @@
+version: '3.1'
+
+services:
+
+    blazegraph:
+        image: conjecto/blazegraph:2.1.5
+        restart: always
+        ports:
+          - 9996:9999
+        environment:
+            JAVA_OPTS: "-Xms2g -Xmx3g"
+        volumes:
+          - ./dataset:/docker-entrypoint-initdb.d
+
+    datatourisme:
+        build: docker
+        volumes:
+          - ./map:/var/app/www/map
+        ports:
+            - "8086:80"
+        restart: always
+        depends_on:
+            - blazegraph
