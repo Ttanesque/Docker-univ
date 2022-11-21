@@ -1,0 +1,7 @@
+version: '3.7'
+
+services:
+  sos:
+    image: 52north/sos:latest
+    ports:
+      - 8080:8080
