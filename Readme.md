@@ -11,3 +11,7 @@ Docker Univ est une collection de docker, docker-compose utiliser pour les cours
 - [Flask Vue](./flask-vue/)
 - [North Sensor Observation Service](./north-sos/)
 - [Blazegraph Graphiql with dataset](./blazegraph-graphiql/) Changement ajout de volume
+- [OpenSearch](./opensearch)
+- [Hadoop mono-ordinateur](./hadoop-solo)
+- [Hadoop multi-ordinateur (swarm)](./hadoop-multi)
+
