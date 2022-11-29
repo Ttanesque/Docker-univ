@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  db:
+    image: kartoza/postgis:latest
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASS=docker
+      - ALLOW_IP_RANGE=0.0.0.0/0
+      - PASSWORD_AUTHENTICATION=md5
+    ports:
+      - "5432:5432"
